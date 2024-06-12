@@ -6,7 +6,7 @@
 /*   By: kschelvi <kschelvi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/03 15:03:27 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/06/11 12:30:32 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/06/12 14:47:07 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,10 @@
 
 int main(void)
 {
-	lexer(NULL, "cat test.txt | wc -l");
+	t_command	*commands;
+
+	commands = NULL;
+	lexer(&commands, "<< test.txt test.txt cat");
+	print_command(commands);
+	free_commands(commands);
 }

@@ -6,7 +6,7 @@
 #    By: kschelvi <kschelvi@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/06/03 14:14:29 by kschelvi      #+#    #+#                  #
-#    Updated: 2024/06/06 14:29:15 by kschelvi      ########   odam.nl          #
+#    Updated: 2024/06/12 13:53:01 by kschelvi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC = main.c \
 		lexer.c \
 		my_error.c \
 		parse_input.c \
-		tokenizer.c
+		tokenizer.c \
+		command.c
 OBJ = $(SRC:%.c=%.o)
 
 LIBFT_PATH = ./libft

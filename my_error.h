@@ -6,7 +6,7 @@
 /*   By: sgrootve <sgrootve@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/04 13:09:26 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/06/06 12:30:47 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/06/12 13:09:20 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef enum e_error
 	ERR_INVALID_COMMAND,
 	ERR_FAILED_TO_EXEC,
 	ERR_FAILED_TO_WRITE,
+	ERR_PARSE,
+	ERR_FILE_CREAT,
 	ERR_EXIT
 }	t_error;
 

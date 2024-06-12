@@ -6,12 +6,14 @@
 /*   By: kschelvi <kschelvi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/03 14:00:21 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/06/06 14:43:29 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/06/12 14:46:30 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEXER_H
 # define LEXER_H
+
+#include <stdbool.h>
 
 typedef enum e_error	t_error;
 
@@ -62,12 +64,17 @@ typedef struct s_command
 	char				**argv;
 	char				*infile;
 	char				*outfile;
+	char				*heredoc;
+	bool				append;
 	int					pid;
 	t_pipe_data			*pipe_data;
 	struct s_command	*next;
 }	t_command;
 
-extern t_error	lexer(t_command *output, char *input);
+extern t_error		lexer(t_command **output, char *input);
+extern t_command	*get_commands(t_usr_input input);
+extern void			print_command(t_command *commands);
+extern void			free_commands(t_command *commands);
 
 extern t_error	tokenizer(t_usr_input *usr_input);
 extern void		free_tokens(t_token **head);
@@ -75,5 +82,8 @@ extern void		free_tokens(t_token **head);
 extern t_error	parse_input(t_arg **output, char *str);
 extern void		print_args(char *str, t_arg *args);
 extern void		free_args(t_arg **args);
+
+extern char		*parse_var(t_token *token);
+extern char		*parse_d_quote(t_token *token);
 
 #endif

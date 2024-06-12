@@ -6,7 +6,7 @@
 /*   By: sgrootve <sgrootve@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/04 13:10:28 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/06/06 13:09:46 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/06/12 13:51:39 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ const char	*g_error_map[] = {
 [ERR_INVALID_PERM] = "Invalid Permissions",
 [ERR_INVALID_COMMAND] = "Command not found",
 [ERR_FAILED_TO_EXEC] = "Failed to execute command",
-[ERR_FAILED_TO_WRITE] = "Failed to write data"
+[ERR_FAILED_TO_WRITE] = "Failed to write data",
+[ERR_PARSE] = "Parse error",
+[ERR_FILE_CREAT] = "Failed to create file"
 };
 
 void	print_error(t_error error)
